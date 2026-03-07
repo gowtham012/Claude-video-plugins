@@ -1,0 +1,23 @@
+{
+  "name": "carry-forward",
+  "owner": {
+    "name": "Gowtham"
+  },
+  "metadata": {
+    "description": "Persists Claude Code session context across sessions — auto-saves after every response, auto-loads at session start."
+  },
+  "plugins": [
+    {
+      "name": "carry-forward",
+      "source": "./",
+      "description": "Persists Claude Code session context across sessions. Auto-saves after every response via Stop hook. Auto-loads at session start via CLAUDE.md @import.",
+      "author": {
+        "name": "Gowtham"
+      },
+      "homepage": "https://github.com/gowtham/carry-forward",
+      "repository": "https://github.com/gowtham/carry-forward",
+      "license": "MIT",
+      "keywords": ["memory", "context", "session", "persistence"]
+    }
+  ]
+}

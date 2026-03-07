@@ -1,0 +1,15 @@
+[project]
+name = "carry-forward"
+version = "1.0.0"
+description = "Persists Claude Code session context across sessions"
+requires-python = ">=3.10"
+authors = [{ name = "Gowtham" }]
+license = { text = "MIT" }
+dependencies = ["fastmcp>=2.0.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

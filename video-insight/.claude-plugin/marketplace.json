@@ -1,0 +1,24 @@
+{
+  "name": "video-insight",
+  "owner": {
+    "name": "Gowtham"
+  },
+  "metadata": {
+    "description": "Give Claude deep understanding of any video — 17 MCP tools and skills for extracting keyframes, OCR text, colors, motion, transcripts, and generating frontend code, PRDs, tests, and more."
+  },
+  "plugins": [
+    {
+      "name": "video-insight",
+      "source": "./",
+      "description": "Give Claude deep understanding of any video. Extracts keyframes, OCR text, colors, motion events, cursor path, fonts, loading states, and confidence scores. 17 skills: build frontend code, design specs, tests, PRDs, changelogs, Storybook stories, Figma tokens, and more.",
+      "author": {
+        "name": "Gowtham"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/gowtham/video-insight",
+      "repository": "https://github.com/gowtham/video-insight",
+      "keywords": ["video", "screen-recording", "ocr", "design-tokens", "frontend", "storybook", "playwright", "mcp"],
+      "category": "development-workflows"
+    }
+  ]
+}

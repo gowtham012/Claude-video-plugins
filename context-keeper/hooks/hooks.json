@@ -1,0 +1,16 @@
+{
+  "description": "Auto-append a brief summary to carry-forward/log.jsonl after every Claude response",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/src/stop_hook.py",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

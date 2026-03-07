@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "duration_seconds": 13.61,
+    "resolution": "1932x1080",
+    "width": 1932,
+    "height": 1080,
+    "fps": 58.0,
+    "has_audio": false,
+    "video_type": "component_demo"
+  },
+  "video_hash": "1217c8b0ff429508",
+  "transcript": [],
+  "scenes": [
+    {
+      "id": "scene_0",
+      "start": 0.0,
+      "end": 2.72,
+      "keyframe_path": "frames/scene_0.png",
+      "keyframe_b64": "<base64 omitted — see keyframe_path>",
+      "detected_text": ["Dashboard"],
+      "color_palette": [
+        { "hex": "#131313", "rgb": [19, 19, 19], "proportion": 0.52 },
+        { "hex": "#f8f8f8", "rgb": [248, 248, 248], "proportion": 0.18 },
+        { "hex": "#d4af37", "rgb": [212, 175, 55], "proportion": 0.04 }
+      ],
+      "ui_components": ["navbar", "icon", "button"],
+      "fonts": [
+        {
+          "text_sample": "Dashboard",
+          "height_px": 14,
+          "size_pct": 1.3,
+          "size_class": "body",
+          "weight_hint": "regular",
+          "confidence": 0.88
+        }
+      ],
+      "motion_detected": false,
+      "motion_level": 2.1,
+      "motion_type": "none",
+      "burst_frames": [],
+      "cursor": {
+        "cursor_detected": true,
+        "cursor_path": [
+          { "x": 0.512, "y": 0.942, "timestamp": 1.36, "velocity": 3.2 }
+        ],
+        "hover_region": { "x": 0.462, "y": 0.892, "w": 0.1, "h": 0.1 }
+      },
+      "scroll": {
+        "has_scrollbar": false,
+        "has_vertical_scrollbar": false,
+        "has_horizontal_scrollbar": false,
+        "scroll_position_pct": null,
+        "scroll_direction": "none"
+      },
+      "loading": {
+        "has_loading": false,
+        "has_spinner": false,
+        "has_skeleton": false,
+        "has_progress_bar": false,
+        "loading_type": "none"
+      },
+      "confidence": {
+        "frame_sharpness": 0.029,
+        "ocr_confidence": 0.1,
+        "scene_boundary_strength": 0.83,
+        "overall": 0.29
+      },
+      "annotated_frame_path": "annotated/scene_0_annotated.png",
+      "transcript_overlap": "",
+      "diff_from_previous": {}
+    },
+    {
+      "id": "scene_1",
+      "start": 2.72,
+      "end": 5.44,
+      "keyframe_path": "frames/scene_1.png",
+      "keyframe_b64": "<base64 omitted — see keyframe_path>",
+      "detected_text": [],
+      "color_palette": [
+        { "hex": "#f5f5f5", "rgb": [245, 245, 245], "proportion": 0.51 },
+        { "hex": "#383838", "rgb": [56, 56, 56], "proportion": 0.21 },
+        { "hex": "#d4af37", "rgb": [212, 175, 55], "proportion": 0.05 }
+      ],
+      "ui_components": ["navbar", "card", "icon"],
+      "fonts": [],
+      "motion_detected": true,
+      "motion_level": 34.2,
+      "motion_type": "cut",
+      "burst_frames": [
+        { "path": "burst/scene_1_burst_0.png", "b64": "<base64 omitted>", "timestamp": 2.72 },
+        { "path": "burst/scene_1_burst_1.png", "b64": "<base64 omitted>", "timestamp": 3.63 },
+        { "path": "burst/scene_1_burst_2.png", "b64": "<base64 omitted>", "timestamp": 4.54 },
+        { "path": "burst/scene_1_burst_3.png", "b64": "<base64 omitted>", "timestamp": 5.44 }
+      ],
+      "cursor": {
+        "cursor_detected": true,
+        "cursor_path": [
+          { "x": 0.198, "y": 0.943, "timestamp": 3.63, "velocity": 12.4 },
+          { "x": 0.201, "y": 0.941, "timestamp": 4.54, "velocity": 2.1 }
+        ],
+        "hover_region": { "x": 0.149, "y": 0.893, "w": 0.1, "h": 0.1 }
+      },
+      "scroll": {
+        "has_scrollbar": false,
+        "scroll_direction": "none",
+        "scroll_position_pct": null
+      },
+      "loading": {
+        "has_loading": false,
+        "loading_type": "none"
+      },
+      "confidence": {
+        "frame_sharpness": 0.031,
+        "ocr_confidence": 0.0,
+        "scene_boundary_strength": 1.0,
+        "overall": 0.33
+      },
+      "annotated_frame_path": "annotated/scene_1_annotated.png",
+      "transcript_overlap": "",
+      "diff_from_previous": {
+        "diff_score": 62.4,
+        "changed_regions": [
+          { "x": 0.0, "y": 0.0, "w": 1.0, "h": 1.0, "intensity": 62.4 }
+        ],
+        "change_type": "full_swap"
+      }
+    }
+  ],
+  "color_palette": [
+    { "hex": "#131313", "rgb": [19, 19, 19], "proportion": 0.51 },
+    { "hex": "#f8f8f8", "rgb": [248, 248, 248], "proportion": 0.22 },
+    { "hex": "#383838", "rgb": [56, 56, 56], "proportion": 0.12 },
+    { "hex": "#d4af37", "rgb": [212, 175, 55], "proportion": 0.05 },
+    { "hex": "#a3a3a3", "rgb": [163, 163, 163], "proportion": 0.04 }
+  ],
+  "typography": [
+    {
+      "text_sample": "Dashboard",
+      "height_px": 14,
+      "size_pct": 1.3,
+      "size_class": "body",
+      "weight_hint": "regular",
+      "confidence": 0.88
+    }
+  ],
+  "summary": {
+    "total_scenes": 2,
+    "has_audio": false,
+    "high_motion_scenes": ["scene_1"],
+    "motion_types": ["cut"],
+    "all_detected_text": ["Dashboard"],
+    "dominant_colors": ["#131313", "#f8f8f8", "#383838", "#d4af37", "#a3a3a3"],
+    "ui_components_detected": ["button", "card", "icon", "navbar"],
+    "font_sizes_detected": ["body"],
+    "loading_scenes": [],
+    "scroll_scenes": [],
+    "cursor_active_scenes": ["scene_0", "scene_1"],
+    "avg_confidence": 0.31,
+    "annotated_frames_dir": "annotated/"
+  }
+}
