@@ -2,7 +2,7 @@
 name: storybook
 description: Generate Storybook .stories.jsx files for every UI component detected in a screen recording. Uses keyframes and burst frames as visual evidence for Default, Loading, and Interactive story variants.
 disable-model-invocation: true
-allowed-tools: mcp__video-understanding__generate_storybook
+allowed-tools: mcp__video-insight__generate_storybook
 argument-hint: <video_path>
 ---
 
@@ -10,7 +10,7 @@ Generate Storybook stories from video: $ARGUMENTS
 
 ## Steps
 
-1. Call MCP tool `mcp__video-understanding__generate_storybook` with `video_path` = `$0`.
+1. Call MCP tool `mcp__video-insight__generate_storybook` with `video_path` = `$0`.
 2. For each component in `component_evidence`:
    - Read all `keyframe_path` and `burst_frame_paths` images
    - Identify visual appearance, color, size, and behavior

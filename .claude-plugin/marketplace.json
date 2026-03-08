@@ -22,7 +22,7 @@
     {
       "name": "video-insight",
       "source": "./video-insight",
-      "description": "Give Claude deep understanding of any video. Extracts keyframes, OCR text, colors, motion events, cursor path, fonts, loading states, and confidence scores. 12 skills for frontend code, design specs, tests, PRDs, and more.",
+      "description": "Give Claude deep understanding of any video. Extracts keyframes, OCR text, colors, motion events, cursor path, fonts, loading states, and confidence scores. 17 skills for frontend code, design specs, tests, PRDs, and more.",
       "author": {
         "name": "Gowtham"
       },

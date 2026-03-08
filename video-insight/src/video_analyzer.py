@@ -1117,12 +1117,12 @@ def detect_loading_states(frame_path: str) -> dict[str, Any]:
     - Progress bar: wide, thin, colored strip
     """
     if not os.path.exists(frame_path):
-        return {"has_loading": False, "loading_type": "none"}
+        return {"has_loading": False, "has_spinner": False, "has_skeleton": False, "has_progress_bar": False, "loading_type": "none"}
 
     try:
         img = cv2.imread(frame_path)
         if img is None:
-            return {"has_loading": False, "loading_type": "none"}
+            return {"has_loading": False, "has_spinner": False, "has_skeleton": False, "has_progress_bar": False, "loading_type": "none"}
 
         h, w = img.shape[:2]
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -1173,7 +1173,7 @@ def detect_loading_states(frame_path: str) -> dict[str, Any]:
         }
 
     except Exception:
-        return {"has_loading": False, "loading_type": "none"}
+        return {"has_loading": False, "has_spinner": False, "has_skeleton": False, "has_progress_bar": False, "loading_type": "none"}
 
 
 # ---------------------------------------------------------------------------

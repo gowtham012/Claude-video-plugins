@@ -12,7 +12,7 @@ labels: bug
 
 ```
 # Command / skill used
-/video-understanding:analyze-video /path/to/video.mp4
+/video-insight:analyze-video /path/to/video.mp4
 
 # Or MCP tool call
 analyze_video(video_path="...", output_dir="...")

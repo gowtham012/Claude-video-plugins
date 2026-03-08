@@ -1,4 +1,4 @@
-# context-keeper
+# carry-forward
 
 A Claude Code plugin that persists session context across conversations — zero friction.
 
@@ -8,10 +8,10 @@ Every new Claude Code session loses all context: what you were building, decisio
 
 ## Solution
 
-context-keeper bridges sessions automatically:
+carry-forward bridges sessions automatically:
 - **Auto-saves** after every Claude response (Stop hook → `log.jsonl`)
 - **Auto-loads** at every session start (CLAUDE.md `@import` → `context.md`)
-- **Rich manual save** with `/context-keeper:save`
+- **Rich manual save** with `/carry-forward:save`
 
 ---
 
@@ -34,14 +34,14 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 Inside Claude Code:
 
 ```
-/plugin marketplace add gowtham/context-keeper
-/plugin install context-keeper@context-keeper
+/plugin marketplace add gowtham012/Claude-plugins
+/plugin install carry-forward@Claude-plugins
 ```
 
 ### Dev / local testing
 
 ```bash
-claude --plugin-dir /path/to/context-keeper
+claude --plugin-dir /path/to/carry-forward
 ```
 
 This loads the plugin for the current session only — use this while developing, not for day-to-day use.
@@ -53,7 +53,7 @@ This loads the plugin for the current session only — use this while developing
 After installing, open Claude Code in any project and run:
 
 ```
-/context-keeper:setup
+/carry-forward:setup
 ```
 
 Then **restart Claude Code**. From that point on, `context.md` loads automatically at every session start via the `@import` in `CLAUDE.md` — no command needed.
@@ -64,10 +64,10 @@ Then **restart Claude Code**. From that point on, `context.md` loads automatical
 
 | Skill | When to use |
 |-------|-------------|
-| `/context-keeper:setup` | Once per project — wires up CLAUDE.md auto-load |
-| `/context-keeper:save` | End of session — writes structured summary to `context.md` |
-| `/context-keeper:load` | Mid-session — review saved context on demand |
-| `/context-keeper:clear` | Start fresh — resets context, archives log |
+| `/carry-forward:setup` | Once per project — wires up CLAUDE.md auto-load |
+| `/carry-forward:save` | End of session — writes structured summary to `context.md` |
+| `/carry-forward:load` | Mid-session — review saved context on demand |
+| `/carry-forward:clear` | Start fresh — resets context, archives log |
 
 ---
 
@@ -76,14 +76,14 @@ Then **restart Claude Code**. From that point on, `context.md` loads automatical
 ```
 Session 1                    Disk                     Session 2
 ─────────────────────        ─────────────────────    ─────────────────────
-/context-keeper:setup   →    CLAUDE.md gets           Open Claude Code
-                             @context-keeper/         Claude reads context.md
+/carry-forward:setup    →    CLAUDE.md gets           Open Claude Code
+                             @carry-forward/          Claude reads context.md
 ... work ...                 context.md               automatically at startup
 
 Stop hook fires         →    log.jsonl grows          Claude already knows:
 after every response         (auto, silent)           - Current task
                                                       - Files in play
-/context-keeper:save    →    context.md updated       - Decisions made
+/carry-forward:save     →    context.md updated       - Decisions made
                              (rich summary)           - Next steps
 
 Close Claude Code                                     Just say "continue"
@@ -97,8 +97,8 @@ Files are created inside your project:
 
 ```
 your-project/
-├── CLAUDE.md                           ← @context-keeper/context.md added here
-└── context-keeper/
+├── CLAUDE.md                           ← @carry-forward/context.md added here
+└── carry-forward/
     ├── context.md                      ← auto-loaded every session start
     ├── log.jsonl                       ← auto-appended after every response
     └── log.2026-03-07T10-30.jsonl.bak  ← created by /clear
@@ -109,7 +109,7 @@ your-project/
 ## Update
 
 ```
-/plugin marketplace update context-keeper
+/plugin marketplace update carry-forward
 ```
 
 ---
@@ -117,7 +117,7 @@ your-project/
 ## Uninstall
 
 ```
-/plugin uninstall context-keeper@context-keeper
+/plugin uninstall carry-forward@Claude-plugins
 ```
 
 ---

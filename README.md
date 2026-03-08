@@ -9,6 +9,24 @@ Two Claude Code plugins by Gowtham — install once, use forever.
 
 ---
 
+## Prerequisites
+
+- Python 3.10+
+- [`uv`](https://docs.astral.sh/uv/getting-started/installation/) — manages dependencies automatically
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+For video-insight, you also need `ffmpeg`:
+```bash
+# macOS
+brew install ffmpeg
+
+# Ubuntu / Debian
+sudo apt install ffmpeg
+```
+
 ## Installation
 
 ```
@@ -73,7 +91,7 @@ Implementing JWT refresh flow in useAuth.ts
 
 > Give Claude eyes. Drop any video — get keyframes, OCR text, colors, motion, transcript, and production-ready code.
 
-video-insight extracts 13 signals from any video recording and exposes 12 skills to turn that data into frontend code, design specs, test files, PRDs, user flows, and more.
+video-insight extracts 13 signals from any video recording and exposes 17 skills to turn that data into frontend code, design specs, test files, PRDs, user flows, and more.
 
 ### Skills
 
@@ -85,12 +103,17 @@ video-insight extracts 13 signals from any video recording and exposes 12 skills
 | `/video-insight:design-spec` | Figma-style design spec — tokens, components, copy, motion |
 | `/video-insight:write-copy` | Extract all visible text and narration verbatim |
 | `/video-insight:generate-tests` | Screen recording → Playwright or Cypress test file |
+| `/video-insight:playwright-tests` | Generate TypeScript Playwright test file from recording |
 | `/video-insight:export-tokens` | Export colors as Tailwind config, CSS variables, or Figma tokens |
+| `/video-insight:figma-tokens` | Export Figma Variables tokens, CSS properties, and Tailwind config |
 | `/video-insight:user-flow` | Reconstruct step-by-step user journey from a recording |
 | `/video-insight:generate-animations` | CSS @keyframes or Framer Motion from animated scenes |
 | `/video-insight:describe-3d` | Analyze 3D walkthroughs — camera path, materials, geometry |
 | `/video-insight:generate-prd` | Full PRD from a product demo video |
 | `/video-insight:compare-videos` | A/B diff two recordings — visual, text, flow, motion |
+| `/video-insight:changelog` | User-facing changelog from before/after recordings |
+| `/video-insight:storybook` | Generate Storybook stories for detected UI components |
+| `/video-insight:watch` | Scan a directory and auto-analyze new video files |
 
 ### What gets extracted
 
@@ -107,6 +130,7 @@ video-insight extracts 13 signals from any video recording and exposes 12 skills
 
 - Python 3.10+
 - `uv` (manages all ML dependencies automatically)
+- `ffmpeg` (includes `ffprobe`) — required for video metadata extraction
 - Optional: GPU for faster transcription with faster-whisper
 
 ---

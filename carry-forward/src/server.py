@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-context-keeper MCP server (FastMCP).
+carry-forward MCP server (FastMCP).
 5 tools: setup_project, read_context, write_context, append_log, clear_context.
 """
 import json
@@ -49,9 +49,6 @@ def _log_file(cwd: str) -> Path:
     return _context_dir(cwd) / "log.jsonl"
 
 
-def _decisions_file(cwd: str) -> Path:
-    return _context_dir(cwd) / "decisions.json"
-
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -61,7 +58,7 @@ def _now_iso() -> str:
 def setup_project(cwd: str) -> str:
     """
     One-time setup for a project.
-    Creates context-keeper/ directory, writes initial context.md,
+    Creates carry-forward/ directory, writes initial context.md,
     and appends @import line to CLAUDE.md so context auto-loads every session.
     """
     ctx_dir = _context_dir(cwd)
@@ -95,7 +92,7 @@ def setup_project(cwd: str) -> str:
         claude_md_status = "CLAUDE.md already has the @import line."
 
     return (
-        f"context-keeper set up in {ctx_dir}.\n"
+        f"carry-forward set up in {ctx_dir}.\n"
         f"{claude_md_status}\n"
         "Restart Claude Code for auto-loading to take effect."
     )

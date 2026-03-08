@@ -40,9 +40,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/gowtham/video-insight"
-Repository = "https://github.com/gowtham/video-insight"
-Issues = "https://github.com/gowtham/video-insight/issues"
+Homepage = "https://github.com/gowtham012/Claude-plugins/tree/main/video-insight"
+Repository = "https://github.com/gowtham012/Claude-plugins"
+Issues = "https://github.com/gowtham012/Claude-plugins/issues"
 
 [project.scripts]
 video-insight-server = "src.server:main"

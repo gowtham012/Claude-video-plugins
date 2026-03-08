@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Stop hook — runs after every Claude response.
-Appends a brief summary line to {cwd}/context-keeper/log.jsonl.
+Appends a brief summary line to {cwd}/carry-forward/log.jsonl.
 Uses stdlib only; never blocks Claude on any error.
 """
 import json

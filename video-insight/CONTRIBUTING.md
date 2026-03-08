@@ -1,12 +1,12 @@
 # Contributing
 
-Thank you for your interest in contributing to video-understanding-plugin!
+Thank you for your interest in contributing to video-insight!
 
 ## Development setup
 
 ```bash
-git clone https://github.com/gowtham/video-understanding-plugin
-cd video-understanding-plugin
+git clone https://github.com/gowtham012/Claude-plugins
+cd Claude-plugins/video-insight
 pip install -e ".[dev]"
 brew install ffmpeg   # macOS; or: sudo apt-get install ffmpeg
 ```
@@ -104,7 +104,7 @@ The plugin follows a strict separation of concerns:
 
 ## Reporting issues
 
-Open an issue at https://github.com/gowtham/video-understanding-plugin/issues
+Open an issue at https://github.com/gowtham012/Claude-plugins/issues
 
 Please include:
 - OS and Python version

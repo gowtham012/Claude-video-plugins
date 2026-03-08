@@ -87,6 +87,19 @@ Structural A/B diff — visual changes, text changes, flow changes, motion diffe
 
 - Python 3.10+
 - `uv` — manages all ML dependencies automatically on first run
+- `ffmpeg` (includes `ffprobe`) — required for video metadata extraction
+
+Install ffmpeg:
+```bash
+# macOS
+brew install ffmpeg
+
+# Ubuntu / Debian
+sudo apt install ffmpeg
+
+# Windows (with chocolatey)
+choco install ffmpeg
+```
 
 Optional (for faster transcription):
 - GPU with CUDA support

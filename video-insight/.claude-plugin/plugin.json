@@ -6,7 +6,7 @@
     "name": "Gowtham"
   },
   "license": "MIT",
-  "homepage": "https://github.com/gowtham/video-insight",
-  "repository": "https://github.com/gowtham/video-insight",
+  "homepage": "https://github.com/gowtham012/Claude-plugins/tree/main/video-insight",
+  "repository": "https://github.com/gowtham012/Claude-plugins",
   "keywords": ["video", "screen-recording", "ocr", "design-tokens", "frontend", "storybook", "playwright", "mcp"]
 }

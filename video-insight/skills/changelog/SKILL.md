@@ -2,7 +2,7 @@
 name: changelog
 description: Compare two screen recordings (before and after) and write a polished user-facing changelog entry. Use for version diffs, redesign comparisons, or release notes.
 disable-model-invocation: true
-allowed-tools: mcp__video-understanding__generate_changelog
+allowed-tools: mcp__video-insight__generate_changelog
 argument-hint: <video_before> <video_after> [v1_label] [v2_label]
 ---
 
@@ -16,7 +16,7 @@ Arguments:
 
 ## Steps
 
-1. Call MCP tool `mcp__video-understanding__generate_changelog` with both video paths and version labels.
+1. Call MCP tool `mcp__video-insight__generate_changelog` with both video paths and version labels.
 2. For each `scene_diff`, examine `keyframe_before` and `keyframe_after` side by side.
 3. Write the changelog:
 

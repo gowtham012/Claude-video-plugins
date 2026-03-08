@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": { "name": "Gowtham" },
   "license": "MIT",
-  "homepage": "https://github.com/gowtham/carry-forward",
-  "repository": "https://github.com/gowtham/carry-forward",
+  "homepage": "https://github.com/gowtham012/Claude-plugins/tree/main/carry-forward",
+  "repository": "https://github.com/gowtham012/Claude-plugins",
   "keywords": ["memory", "context", "session", "persistence"]
 }

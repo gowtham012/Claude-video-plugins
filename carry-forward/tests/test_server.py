@@ -25,7 +25,7 @@ from src.server import (
 # ── setup_project ─────────────────────────────────────────────────────────────
 
 class TestSetupProject:
-    def test_creates_context_keeper_directory(self, tmp_path):
+    def test_creates_carry_forward_directory(self, tmp_path):
         setup_project(str(tmp_path))
         assert (tmp_path / "carry-forward").is_dir()
 
@@ -279,6 +279,6 @@ class TestClearContext:
         assert tmp_path.name in content
 
     def test_creates_directory_if_missing(self, tmp_path):
-        """clear_context should not crash on a fresh project with no context-keeper dir."""
+        """clear_context should not crash on a fresh project with no carry-forward dir."""
         clear_context(str(tmp_path))
         assert (tmp_path / "carry-forward" / "context.md").exists()
