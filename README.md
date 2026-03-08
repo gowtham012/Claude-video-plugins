@@ -254,5 +254,6 @@ Use freely, attribution appreciated.
 ---
 
 <p align="center">
-  Built by <a href="https://github.com/gowtham012">Gowtham</a>
+  Built by <a href="https://github.com/gowtham012">Gowtham</a> &bull;
+  <a href="https://x.com/SolletiKumar">Follow on X</a>
 </p>
