@@ -5,13 +5,14 @@
 <h1 align="center">Pitlane Plugins for Claude Code</h1>
 
 <p align="center">
-  <strong>Two open-source plugins that give Claude Code superpowers — persistent memory and deep video understanding.</strong>
+  <strong>Three open-source plugins that give Claude Code superpowers — persistent memory, deep video understanding, and disciplined engineering.</strong>
 </p>
 
 <p align="center">
   <a href="#quick-start">Quick Start</a> &bull;
   <a href="#-carry-forward">carry-forward</a> &bull;
   <a href="#-video-insight">video-insight</a> &bull;
+  <a href="#-deep-engineer">deep-engineer</a> &bull;
   <a href="#contributing">Contributing</a> &bull;
   <a href="#license">License</a>
 </p>
@@ -56,9 +57,10 @@ Inside Claude Code, run:
 /plugin marketplace add gowtham012/Claude-plugins
 /plugin install carry-forward@Claude-plugins
 /plugin install video-insight@Claude-plugins
+/plugin install deep-engineer@Claude-plugins
 ```
 
-That's it. Both plugins are ready to use.
+That's it. All three plugins are ready to use.
 
 ---
 
@@ -225,6 +227,114 @@ No API keys needed. No cloud uploads. Everything runs locally.
 - `uv` — manages all ML dependencies automatically on first run
 - `ffmpeg` (includes `ffprobe`) — required for video metadata extraction
 - Optional: GPU with CUDA support for faster transcription
+
+---
+
+<br/>
+
+## <img src="https://img.shields.io/badge/plugin-deep--engineer-red?style=for-the-badge" alt="deep-engineer" />
+
+### Stop Claude from hardcoding. Force a real engineering loop.
+
+Claude Code's biggest pain points: it hardcodes solutions for your specific example instead of solving generally, skips edge cases you didn't mention, and writes code before thinking. **deep-engineer** fixes all three with mechanical enforcement — not just instructions, but hooks and tools that physically prevent shortcuts.
+
+### How it works
+
+```
+User says "fix X"
+    │
+    ▼
+Phase 1: GENERALIZE ──────── Restate as general problem, list 5+ scenarios
+    │                         save_task REJECTS fewer than 5 scenarios
+    │                         PreToolUse hook BLOCKS Write/Edit
+    ▼
+Phase 2: HYPOTHETICAL TEST ── Walk through approach mentally against ALL scenarios
+    │                         Document pass/fail table, revise until all pass
+    │                         PreToolUse hook BLOCKS Write/Edit
+    ▼
+Phase 3: TDD ─────────────── Write tests covering ALL scenarios
+    │                         PreToolUse hook ALLOWS test files only
+    │                         BLOCKS implementation files
+    ▼
+Phase 4: IMPLEMENT ────────── Write code to pass all tests
+    │                         Anti-hardcoding checklist enforced
+    │                         All Write/Edit allowed
+    ▼
+Phase 5: VERIFY ──────────── Run tests, fix failures, loop until green
+    │                         complete_task REJECTS unless all phases done
+    ▼
+Done ── Task archived to history/
+```
+
+### What makes it different
+
+This isn't prompt engineering. The plugin uses **three enforcement layers**:
+
+| Layer | Mechanism | What it does |
+|:------|:----------|:-------------|
+| **PreToolUse hook** | Intercepts Write/Edit before execution | Physically blocks code files during Phases 1-2. During Phase 3, only allows test files. |
+| **MCP tool validation** | Server-side rejection | `save_task` rejects <5 scenarios. `update_phase` rejects skipping/backwards. `complete_task` rejects until verify phase. |
+| **Stop hook** | Injects `additionalContext` JSON | Claude sees phase reminders and violation warnings in every turn. |
+
+### One-time setup
+
+```
+/deep-engineer:setup
+```
+
+### Usage
+
+```
+/deep-engineer:solve Fix the date parser to handle ISO 8601 dates
+```
+
+Claude will:
+1. Restate as "parse date strings in multiple formats" (not just ISO 8601)
+2. List 5+ scenarios (with timezone, empty string, invalid format, unix timestamp, etc.)
+3. Walk through approach mentally against all scenarios
+4. Write tests covering all scenarios — implementation files are **blocked** by hooks
+5. Write implementation — no hardcoded values
+6. Run tests and loop until all pass
+
+### Skills
+
+| Skill | What it does |
+|:------|:-------------|
+| `/deep-engineer:setup` | One-time setup — creates directory, wires CLAUDE.md `@import` |
+| `/deep-engineer:solve` | Main engineering loop — all 5 phases with enforcement |
+| `/deep-engineer:status` | Current phase, scenarios, warnings, test runner info |
+
+### Test runner auto-detection
+
+Supports 20+ frameworks out of the box:
+
+| Language | Frameworks |
+|:---------|:-----------|
+| Python | pytest, unittest |
+| JavaScript/TypeScript | vitest, jest, mocha |
+| Go | go test |
+| Rust | cargo test |
+| Ruby | rspec, rake |
+| Java | maven, gradle |
+| PHP | phpunit |
+| Elixir | mix test |
+
+### Storage
+
+```
+your-project/
+├── CLAUDE.md                         <-- @deep-engineer/current-task.md added here
+└── deep-engineer/
+    ├── current-task.md               <-- active task (auto-loaded every session)
+    ├── log.jsonl                     <-- phase transitions + violation log
+    └── history/
+        └── task-2026-03-09T....md    <-- archived completed tasks
+```
+
+### Requirements
+
+- Python 3.10+
+- `uvx` (installed automatically with `uv`)
 
 ---
 
