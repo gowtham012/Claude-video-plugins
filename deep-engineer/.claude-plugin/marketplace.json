@@ -1,0 +1,23 @@
+{
+  "name": "deep-engineer",
+  "owner": {
+    "name": "Gowtham"
+  },
+  "metadata": {
+    "description": "Disciplined engineering loop for Claude Code — generalize, think through scenarios, TDD, implement, verify in a loop."
+  },
+  "plugins": [
+    {
+      "name": "deep-engineer",
+      "source": "./",
+      "description": "Forces Claude through a disciplined engineering loop: generalize the problem, think through scenarios, TDD, implement, verify. Prevents hardcoded solutions and skipped edge cases.",
+      "author": {
+        "name": "Gowtham"
+      },
+      "homepage": "https://github.com/gowtham012/Claude-plugins/tree/main/deep-engineer",
+      "repository": "https://github.com/gowtham012/Claude-plugins",
+      "license": "MIT",
+      "keywords": ["tdd", "engineering", "testing", "autonomous", "loop", "discipline"]
+    }
+  ]
+}

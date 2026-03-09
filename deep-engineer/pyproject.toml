@@ -1,0 +1,15 @@
+[project]
+name = "deep-engineer"
+version = "1.0.0"
+description = "Disciplined engineering loop for Claude Code — generalize, scenario-test, TDD, implement, verify"
+requires-python = ">=3.10"
+authors = [{ name = "Gowtham" }]
+license = { text = "MIT" }
+dependencies = ["fastmcp>=2.0.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

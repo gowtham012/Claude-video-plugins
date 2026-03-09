@@ -4,7 +4,7 @@
     "name": "gowtham012"
   },
   "metadata": {
-    "description": "Claude Code plugins by Gowtham — carry-forward for session memory, video-insight for deep video understanding."
+    "description": "Claude Code plugins by Gowtham — carry-forward for session memory, video-insight for deep video understanding, deep-engineer for disciplined engineering loops."
   },
   "plugins": [
     {
@@ -30,6 +30,19 @@
       "homepage": "https://github.com/gowtham012/Claude-plugins/tree/main/video-insight",
       "repository": "https://github.com/gowtham012/Claude-plugins",
       "keywords": ["video", "screen-recording", "ocr", "design-tokens", "frontend", "mcp"]
+    },
+    {
+      "name": "deep-engineer",
+      "source": "./deep-engineer",
+      "description": "Forces Claude through a disciplined engineering loop: generalize the problem, think through scenarios, TDD, implement, verify. Prevents hardcoded solutions and skipped edge cases.",
+      "author": {
+        "name": "Gowtham"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/gowtham012/Claude-plugins/tree/main/deep-engineer",
+      "repository": "https://github.com/gowtham012/Claude-plugins",
+      "keywords": ["tdd", "engineering", "testing", "autonomous", "loop", "discipline"],
+      "category": "development-workflows"
     }
   ]
 }

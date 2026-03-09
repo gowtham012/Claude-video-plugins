@@ -1,0 +1,35 @@
+{
+  "description": "Enforce engineering loop discipline — blocks Write/Edit during wrong phases, reminds Claude of current phase after each response",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/src/pretool_hook.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/src/pretool_hook.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/src/stop_hook.py"
+          }
+        ]
+      }
+    ]
+  }
+}
