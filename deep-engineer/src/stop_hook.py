@@ -122,13 +122,10 @@ def main() -> None:
         with log_file.open("a", encoding="utf-8") as f:
             f.write(record + "\n")
 
-        # Output JSON with additionalContext so Claude sees it
+        # Output JSON with systemMessage so Claude sees it
         if context_parts:
             output = {
-                "hookSpecificOutput": {
-                    "hookEventName": "Stop",
-                    "additionalContext": "\n".join(context_parts),
-                }
+                "systemMessage": "\n".join(context_parts),
             }
             print(json.dumps(output), flush=True)
 
