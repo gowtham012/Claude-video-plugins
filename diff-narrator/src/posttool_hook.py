@@ -138,7 +138,7 @@ def main() -> None:
         output = {
             "hookSpecificOutput": {
                 "hookEventName": "PostToolUse",
-                "additionalContext": f"\U0001f4dd Logged: {description}"
+                "additionalContext": f"[diff-narrator] Logged: {description}"
             }
         }
         print(json.dumps(output))
